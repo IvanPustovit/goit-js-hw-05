@@ -9,33 +9,22 @@ class StringBuilder {
         return this._value
     }
     append(str){
-        const arr = this._value.split('')
-        arr.push(str)
-        this._value = arr.join('')
-        return 
+        this._value = this._value + str
+        
     }
 
     prepend(str){
-        const arr = this._value.split('')
-        arr.unshift(str)
-        this._value = arr.join('')
-        return 
+        this._value = str + this._value
     }
 
     pad(str){
-        const arr = this._value.split('')
-        arr.push(str)
-        arr.unshift(str)
-        this._value = arr.join('')
-        return
+        this._value = str + this._value + str
     }
 
 }
 
-
 const builder = new StringBuilder('.');
 console.log(builder.value);
-
 
 builder.append('^');
 // console.log(builder.append('^'));

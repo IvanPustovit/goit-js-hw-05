@@ -1,19 +1,20 @@
 "use strict";
 
 class Storage {
-  constructor(item) {
-    this.item = item;
+  constructor(items) {
+    this.items = items
   }
   getItems() {
-    return this.item;
+    return this.items;
   }
 
   addItem(item) {
-    return this.item.push(item);
+    this.items.push(item)
+
   }
 
   removeItem(item) {
-    return this.item.splice(this.item.indexOf(item), 1);
+    this.items.splice(this.items.indexOf(item), 1)
   }
 }
 
@@ -23,13 +24,12 @@ const storage = new Storage([
   "Железные жупи",
   "Антигравитатор"
 ]);
-console.log(storage);
 
 const items = storage.getItems();
 console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
 
 storage.addItem("Дроид");
-console.table(storage.item); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
+console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
 
 storage.removeItem("Пролонгер");
-console.table(storage.item); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
+console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]

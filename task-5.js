@@ -25,33 +25,33 @@ class Car {
     }
 
     set price(value) {
-        return this._price = value
+        this._price = value
     }
 
     turnOn() {
-        return this.isOn = true
+        this.isOn = true
     }
 
     turnOff() {
-        return this.isOn = false
+        this.isOn = false
     }
 
     accelerate(value) {
-        return value < this.maxSpeed ? this.speed = value : false
+        value < this.maxSpeed ? this.speed = value : false
     }
 
     decelerate(value) {
         if (value > 0 && value < this.speed) {
             this.speed = this.speed - value
         } else this.speed = 0
-        return this.speed
+        // return this.speed
     }
 
     drive(hours) {
         if (this.isOn = true) {
             this.distance = this.speed * hours
         }
-        return
+        // return
 
     }
 }
